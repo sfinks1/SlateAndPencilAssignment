@@ -6,35 +6,44 @@
    Case Problem 1
    
    Layout styles for Slate and Pencil Tutoring
-   Author: Chad Powell
-   Date:   February 19, 2021
+   Author: Samantha Finks 
+   Date: week 5 4/18/2022 - 4/24/2022
    
    Filename: sp_layout.css
 
 */
 
 /* Window and Body Styles */
+body{
+    margin-left: auto;/*Horizontally center the page body within the browser window*/
+    margin-right: auto;
 
-html {
-	height: 100%;
+    max-width: 960px; /*Create a style rule for the page body that sets the width to 95% of the browser window                                  
+	ranging from 640 pixels up to 960 pixels*/
+    min-width:640px; 
+
+    height: 100%; /*Create a style rule for the html element that sets the height of the browser window at 100%.*/
+    width: 95%;
+    min-height: 100%;/*Set the minimum height of the browser window to 100%.*/
+    }
+
+ /*Create a style rule to apply the Border Box model
+  to all header, ul, nav, li, and a elements in the document.*/ 
+header, ul, nav, li, a{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body {
-	width: 95%;
-	max-width: 960px;
-	min-width: 640px;
-	margin: 0 auto;
-	min-height: 100%;
-}
 
 
-header, ul, nav, li, a {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Row Styles */
+/*  Row Styles
+Go to the Row Styles section. Karen has placed all elements that should 
+be treated as grid rows in the row class. For every element of the 
+row class, create a style rule that expands the element to cover 
+any floating content within the element. 
+(Hint: Use the technique shown in the tutorial that employs 
+the after pseudo-element.)*/
 .row {
 	clear: both;
 }
@@ -45,23 +54,34 @@ header, ul, nav, li, a {
 	display: table;
 }
 
+/* Page Header Styles 
+Go to the Page Header Styles section. In this section, you will 
+create styles for the content of the body header.*/
 
-
-
-
-/* Page Header Styles */
 header > nav > ul > li > a {
 	display: block;
 	width: 100%;
 }
 
+/*Create a style 
+rule for the logo image within the body header that displays 
+the image as a block with a width of 70% of the header, 
+floated on the left margin.*/
 header > img {
 	display: block;
 	width: 70%;
 	float: left;
 }
 
+/*The header also contains a navigation list 
+that Karen wants to display vertically. 
+Create a style rule for the nav element 
+within the body header that:
 
+-floats the navigation list on the left,
+-sets the size of the left and right padding to 2%,
+-sets the width of the navigation list to 30% of 
+the width of the header.*/
 header nav {
 	float: left;
 	padding-left: 2%;
@@ -69,15 +89,25 @@ header nav {
 	width: 30%;
 }
 
-
+/*The hypertext links in the navigation list 
+should be displayed as blocks. 
+Create a style rule for every an  "a"
+element in the header navigation list 
+that displays the element as a block with a width of 100%.*/
 header > nav > ul > li > a {
 	display: block;
 	width: 100%;
 }
 
 
+/* Horizontal Navigation List Styles 
 
-/* Horizontal Navigation List Styles */
+Go to the Horizontal Navigation List Styles section. 
+Karen has added a second navigation list that she wants 
+to display horizontally. For all list items within the 
+horizontal navigation list, create a style rule that 
+displays the items as blocks with a width of 12.5% 
+floated on the left margin*/
 nav.horizontal > ul > li {
 	display: block;
 	width: 12.5%;
@@ -86,7 +116,18 @@ nav.horizontal > ul > li {
 
 
 
-/* Topics Styles */
+/* Topics Styles 
+Go to the Topics Styles section. This section sets the
+styles for a list of four topics describing what the 
+company is offering. Karen wants this list to also be 
+displayed horizontally on the page. For list items 
+within the ul element with the id topics, 
+create a style rule to:*/
+
+/*display the items as blocks with a width of 20%,
+loat the items on the left margin,
+set the size of the left margin space to 0% and the 
+right margin space to 1.5%.*/
 ul#topics > li {
 	display: block;
 	width: 20%;
@@ -95,17 +136,24 @@ ul#topics > li {
 	margin-right: 1.5%;
 }
 
-
+/*Karen wants the topics list to be well away from the 
+left and right edges of the page body. In the same 
+section, create a rule that sets the size of the 
+left margin of the first item in the topics list to 7.75%*/
 ul#topics > li:first-child {
 	margin-left: 7.75%;
 }
 
-
+/*sets the right margin of the last item to 7.75%.*/
 ul#topics > li:last-child {
 	margin-right: 7.75%;
 }
 
-
+/*In the same section, create a rule that displays 
+the image within each list item in the topics 
+list as a block with a width of 50% and centered 
+within the list item block.
+(Hint: Set the left and right margins to auto.)*/
 ul#topics > li > img {
 	display: block;
 	width: 50%;
@@ -113,24 +161,42 @@ ul#topics > li > img {
 	margin-left: auto;
 }
 
+/* HR Styles
 
-
-
-
-/* HR Styles */
+Go to the HR Styles section. The hr element is used
+to display a horizontal divider between sections of
+the page. Add a style rule that sets the width of 
+the hr element to 50%. */
 hr {
 	width: 50%;
 }
 
 
 
-/* Customer Comment Styles */
+/* Customer Comment Styles 
+Go to the Customer Comment Styles section. 
+In this section, you will create style rules 
+for the customer comments displayed near the bottom of the page. 
+
+
+For the ul element with the id comments, create a style rule 
+that sets the width to 75% and centers the element by setting 
+the top/bottom margin to 40 pixels and the left/right margin to auto.*/
 ul#comments {
 	width: 75%;
-	margin: 30px auto;
+	margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/*Karen wants the list items to appear in two columns 
+on the page. In the same section, create a style rule 
+for every list item in the comments list that:
 
+displays the item as a block with a width of 50% 
+floated on the left and
+sets the size of the bottom margin to 30 pixels.*/
 ul#comments > li {
 	display: block;
 	width: 50%;
@@ -138,7 +204,12 @@ ul#comments > li {
 	margin-bottom: 30px;
 }
 
-
+/*Every customer comment is accompanied by an image of 
+the student. Karen wants these images displayed to the 
+left of the comment. Create a style rule to display the 
+image within each comment list item as a block with a 
+width of 20%, floated on the left, and with a left/right 
+margin of 5%.*/
 ul#comments > li > img {
 	display: block;
 	width: 20%;
@@ -147,15 +218,20 @@ ul#comments > li > img {
 	margin-left: 5%;
 }
 
-
+/*Create a style rule for every paragraph nested 
+within a customer list item that floats the paragraph 
+on the left margin with a width of 70%.*/
 ul#comments > li > p {
 	float: left;
 	width: 70%;
 }
 
 
-/* Footer Styles */
+/* Footer Styles 
+Go to the Footer Styles section and 
+create a style rule that displays the 
+footer only when both margins are clear 
+of floating objects.*/
 footer {
 	clear: both;
 }
-
